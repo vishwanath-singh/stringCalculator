@@ -25,4 +25,12 @@ describe('stringCalculator tests' , () => {
     test('support for different delimiters', () => {
         expect(stringCalculator('//;\n1;2')).toBe(3);
     });
+
+    test('negative number not allowed', () => {
+        expect(() => stringCalculator('-1')).toThrow('negative number not allowed -1')  
+    });
+
+    test('multiple negative numbers not allowed', () => {
+        expect(() => stringCalculator('-1,2,-3')).toThrow('negative number not allowed -1,-3')     
+    });
 })
