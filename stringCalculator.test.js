@@ -18,5 +18,11 @@ describe('stringCalculator tests' , () => {
         expect(stringCalculator('1, 2, 3')).toBe(6);
     });
 
-   
+    test('new line as delimiter should return the sum of numbers', () => {
+        expect(stringCalculator('1\n2, 3')).toBe(6);
+    });
+
+    test('support for different delimiters', () => {
+        expect(stringCalculator('//;\n1;2')).toBe(3);
+    });
 })
