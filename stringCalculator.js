@@ -8,7 +8,12 @@ function stringCalculator(number) {
 
     if(number.slice(0,2) == '//') {
         let delimiter = number[2]
-        number = number.slice(3).split(delimiter).join(',')
+        let endIdx = 2
+        if(delimiter == '[') {
+            endIdx = number.indexOf(']')
+            delimiter = number.slice(3, endIdx)
+        } 
+        number = number.slice(endIdx+1).split(delimiter).join(',')
     }
 
     if(number.indexOf('\n') != -1) number = number.replace(/\n/g, ',')
