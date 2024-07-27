@@ -33,4 +33,8 @@ describe('stringCalculator tests' , () => {
     test('multiple negative numbers not allowed', () => {
         expect(() => stringCalculator('-1,2,-3')).toThrow('negative number not allowed -1,-3')     
     });
+
+    test('Number bigger than 1000 should be ignored', () => {
+        expect(stringCalculator('2, 1001')).toBe(2);
+    });
 })

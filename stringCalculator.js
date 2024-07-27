@@ -13,7 +13,7 @@ function stringCalculator(number) {
 
     if(number.indexOf('\n') != -1) number = number.replace(/\n/g, ',')
 
-    const numArr = number.split(',').filter(num => num != '')
+    const numArr = number.split(',').filter(num => num != '' && parseInt(num) <= 1000)
 
     const negativeNums = numArr.filter(num => parseInt(num) < 0)
 
